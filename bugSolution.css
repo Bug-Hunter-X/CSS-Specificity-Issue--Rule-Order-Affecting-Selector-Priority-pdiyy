@@ -1,0 +1,12 @@
+The solution to this unusual CSS issue involves modifying the order of CSS rules in the stylesheet.  The more specific rule should always be declared after the less specific one, although technically it should not matter:
+
+```css
+p {
+  color: red;
+}
+div p {
+  color: blue;
+}
+```
+
+By placing the `div p` rule after the `p` rule, we ensure that the more specific selector's style will always be applied correctly, regardless of any potential quirks in how the browser processes and applies CSS rules.
