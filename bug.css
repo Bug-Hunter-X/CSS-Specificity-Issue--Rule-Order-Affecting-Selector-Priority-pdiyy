@@ -1,0 +1,15 @@
+The following CSS code snippet demonstrates an unusual issue related to the specificity of CSS selectors:
+
+```css
+div p {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+```
+
+In most cases, the more specific selector (`div p`) would override the less specific selector (`p`). However, in some browsers or situations involving dynamically generated content, the order of rules in the CSS file might affect how this specificity works.  The `p` rule could unexpectedly override the `div p` rule if the `p` rule is declared after the `div p` rule, even though `div p` is more specific.
+
+This is not a standard CSS behavior but can occur due to implementation differences in how browsers process CSS and handle cascading.
